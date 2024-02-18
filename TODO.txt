@@ -1,0 +1,5 @@
+overflow scroll
+nbar
+grafe 
+footer
+ne dela zadna vrstica pr formu kodi da ko submites prids nazaj na prvo strn pa dobiš pop out sporočilo da si uspešno poslou stvari
