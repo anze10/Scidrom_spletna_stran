@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <div className="header">
             <nav className='navbar'>
-                <Link href="/" className='logo'>
+                <Link href="https://www.sc-nm.si/sestg/" className='logo'>
                     <Image src={logo} alt='logo' />
                 </Link>
                 <div className='hamburger' onClick={() => setNavbarOpen(!navbarOpen)}>

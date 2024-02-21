@@ -7,29 +7,26 @@ const Footer = () => {
 
         <Box component="footer" sx={{ textAlign: 'center', padding: '20px 0', backgroundColor: "black" }}>
             <Typography sx={{ color: "white" }}>
-                @Scidrom 2024 vse pravice pridržane
+                ©Scidrom 2024 vse pravice pridržane
             </Typography>
             <Typography sx={{ color: "white" }}>
                 Spletno stran je izdelal Anže s pomočjo dveh prijateljev, katerima se iskreno zahvaljujem: Luka in Tim.
             </Typography>
-            <Link href="https://github.com/anze10" color="inherit" sx={{ color: "white", marginRight: 8 }}>
+            <Link href="https://github.com/anze10" color="inherit" sx={{ color: "white", marginRight: { xs: 0, sm: 8 }, display: 'inline' }}>
                 <GitHubIcon sx={{ marginRight: 1 }} />
                 Anže
             </Link>
             {' | '}
-            <Link href="https://github.com/lukaprsina" color="inherit" sx={{ color: "white", marginRight: 8 }}>
+            <Link href="https://github.com/lukaprsina" color="inherit" sx={{ color: "white", marginRight: { xs: 0, sm: 8 }, display: 'inline' }}>
                 <GitHubIcon sx={{ marginRight: 1 }} />
                 Luka
             </Link>
             {' | '}
-            <Link href="https://github.com/timnahtigal" color="inherit" sx={{ color: "white", marginRight: 8 }}>
+            <Link href="https://github.com/timnahtigal" color="inherit" sx={{ color: "white", marginRight: 0, display: 'inline' }}>
                 <GitHubIcon sx={{ marginRight: 1 }} />
                 Tim
             </Link>
-
-
         </Box>
-
 
     );
 };
