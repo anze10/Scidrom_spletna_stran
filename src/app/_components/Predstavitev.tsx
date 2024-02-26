@@ -1,4 +1,11 @@
 import React from 'react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import "src/app/_components/Predstavitev.css"
 
 function predstavitev() {
@@ -13,6 +20,21 @@ function predstavitev() {
         <audio controls>
           <source src="/test.mp3" type="audio/mpeg" />
         </audio>
+        <br />
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          <SwiperSlide><img src="/IMG_6600.JPG" alt="antena" /></SwiperSlide>
+          <SwiperSlide><img src="/IMG_6604.JPG" alt="antena2" /></SwiperSlide>
+          <SwiperSlide><img src="/IMG_6605.PNG" alt="antena3" /></SwiperSlide>
+        </Swiper>
       </div>
 
     </div>
