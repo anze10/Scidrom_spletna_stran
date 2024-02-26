@@ -1,14 +1,23 @@
-import React from 'react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+"use client"
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import React, { useRef } from 'react'
 import "src/app/_components/Predstavitev.css"
+import img1 from "~/../public/IMG_6600.jpg"
+import img2 from "~/../public/IMG_6604.jpg"
+import img3 from "~/../public/IMG_6605.png"
+import { register } from 'swiper/element/bundle';
+import Image from 'next/image';
+import 'swiper/element/css/navigation'
+import 'swiper/element/css/pagination';
+import 'swiper/element/css/scrollbar';
 
-function predstavitev() {
+// register Swiper custom elements
+register();
+
+
+function Predstavitev() {
+  const swiperElRef = useRef(null);
+
   return (
     <div className='hero'>
       <div className='content'>
@@ -21,23 +30,20 @@ function predstavitev() {
           <source src="/test.mp3" type="audio/mpeg" />
         </audio>
         <br />
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+        <swiper-container
+          ref={swiperElRef}
+          slides-per-view="1"
+          navigation="true"
+          pagination="true"
+          scrollbar="true"
         >
-          <SwiperSlide><img src="/IMG_6600.JPG" alt="antena" /></SwiperSlide>
-          <SwiperSlide><img src="/IMG_6604.JPG" alt="antena2" /></SwiperSlide>
-          <SwiperSlide><img src="/IMG_6605.PNG" alt="antena3" /></SwiperSlide>
-        </Swiper>
+          <swiper-slide><Image className="w-full h-auto" src={img1} alt="antena" /></swiper-slide>
+          <swiper-slide><Image className="w-full h-auto" src={img2} alt="antena2" /></swiper-slide>
+          <swiper-slide><Image className="w-full h-auto" src={img3} alt="antena3" /></swiper-slide>
+        </swiper-container>
       </div>
 
     </div>
   )
 }
-export default predstavitev
+export default Predstavitev
